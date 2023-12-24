@@ -27,4 +27,5 @@ three_point_evolution <- function(nba_all_stars) {
 #--------------------------------------------------------------------#
 
 # Call functions
-result_plot <- three_point_evolution()
+result_plot <- three_point_evolution(your_nba_all_stars_data_frame) # update 'your_nba_all_stars_data_frame' with a data frame
+print(result_plot)  # Optional if you want to display the plot
