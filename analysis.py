@@ -13,7 +13,7 @@ nba_all_stars = pd.read_csv("../input/nba-all-star-players-and-stats-1980-2022/f
 #-------------- Split data into features / Target / Train / Validation --------------#
 
 #-------------- Trains a random forest classifier model --------------#
-def run_random_forest(self) -> None:
+def three_point_evolution() -> None:
     
     # Assuming 'year' and 'fg3a' are column in your DataFrame
     x = nba_all_stars[['year']]
@@ -38,6 +38,7 @@ def run_random_forest(self) -> None:
     plt.title('Actual vs Predicted 3-Pointers Attempted by NBA All Stars')
     plt.legend()
     plt.show()
+#--------------------------------------------------------------------#
 
 # Call models
-run_random_forest()
+three_point_evolution()
