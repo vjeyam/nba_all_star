@@ -133,7 +133,7 @@ def three_point_evolution():
     y = nba_all_stars[['fg3a']]
     
     # Split the data into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Lower random state?
     
     # Use scikit-learn for some machine learning task (ie. regression)
     model = RandomForestRegressor()
@@ -156,13 +156,11 @@ def three_point_evolution():
 
 #-------------- Trains a linear regression model --------------#
 def run_linear_regression():
-    
     # FIX!!!
-    lr_model = Pipeline(steps = [('preprocessor', preprocessor),
-                                 ('classifier', LogisticRegression(random_state = 42, max_iter = 1000))])
+    lr_model = Pipeline(steps = [('preprocessor', preprocessor), ('classifier', LogisticRegression(random_state = 42, max_iter = 1000))]) # Lower random_state to improve Logistic Regression?
     
     lr_model.fit(X_train, y_train)
-    lr_val_pred = lr_model.predict_proba(x_val)
+    lr_val_pred = lr_model.predict_proba(X_val)
     
     lr_model.fit(X, y)
     lr_pred = lr_model.predict_proba(test_data[['Y', 'X', 'DayOfWeek', 'X_rotated_30', 'Y_rotated_30', 'X_rotated_45', 'Y_rotated_45', 'X_rotated_60', 'Y_rotated_60', 'R', 'Theta']])
@@ -173,8 +171,9 @@ def run_linear_regression():
     
     lr_df.to_csv('logistic_regression.csv', index = False)
     return
-   
 #--------------------------------------------------------------------#
 
+
+
 # Call models
-# three_point_evolution()
+# run_linear_regression()
