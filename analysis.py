@@ -15,6 +15,7 @@ from sklearn.impute import SimpleImputer
 #-------------- Import datasets --------------#
 train_data = pd.read_csv("../input/nba-all-star-players-and-stats-1980-2022/final_data.csv")
 test_data = pd.read_csv("../input/nba-all-star-players-and-stats-1980-2022/final_data.csv")
+nba_all_stars = pd.read_csv("../input/nba-all-star-players-and-stats-1980-2022/final_data.csv")
 #---------------------------------------------#
 
 #-------------- Clean data / Feature engineering --------------#
